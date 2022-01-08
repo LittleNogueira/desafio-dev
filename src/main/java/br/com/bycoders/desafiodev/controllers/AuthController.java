@@ -26,7 +26,7 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<Object> login(@RequestBody @Valid LoginForm loginForm){
+    public ResponseEntity<TokenResponse> login(@RequestBody @Valid LoginForm loginForm){
         Authentication authentication = authenticationManager.authenticate(LoginMapper.mapper(loginForm));
         return ResponseEntity.ok(new TokenResponse(tokenService.generateToken(authentication),"Bearer"));
     }

@@ -23,7 +23,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<Object> criarUsuario(@RequestBody @Valid UsuarioForm usuarioForm, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<Usuario> criarUsuario(@RequestBody @Valid UsuarioForm usuarioForm, UriComponentsBuilder uriComponentsBuilder){
         Usuario novoUsuario = usuarioService.salvar(UsuarioMapper.mapper(usuarioForm));
         URI uri = uriComponentsBuilder.path("/auth").build(novoUsuario);
         return ResponseEntity.created(uri).body(novoUsuario);

@@ -1,4 +1,4 @@
-package br.com.bycoders.desafiodev.controllers;
+package br.com.bycoders.desafiodev.configs.handler;
 
 import br.com.bycoders.desafiodev.responses.ErroFormResponse;
 import br.com.bycoders.desafiodev.responses.ErroResponse;
