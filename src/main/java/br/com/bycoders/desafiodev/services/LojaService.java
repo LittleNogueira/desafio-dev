@@ -2,6 +2,7 @@ package br.com.bycoders.desafiodev.services;
 
 import br.com.bycoders.desafiodev.entities.Loja;
 import br.com.bycoders.desafiodev.entities.Operacao;
+import br.com.bycoders.desafiodev.exceptions.NotFoundException;
 import br.com.bycoders.desafiodev.repositories.LojaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,14 @@ public class LojaService {
 
     public List<Loja> save(List<Loja> lojas){
         return lojaRepository.saveAll(lojas);
+    }
+
+    public List<Loja> getAll(){
+        return lojaRepository.findAll();
+    }
+
+    public Loja getById(String id){
+        return lojaRepository.findById(id).orElseThrow(() -> new NotFoundException());
     }
 
 }

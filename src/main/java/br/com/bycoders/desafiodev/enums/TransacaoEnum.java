@@ -6,15 +6,15 @@ import java.util.Arrays;
 
 @Getter
 public enum TransacaoEnum {
-    DEBITO(1, "Débito", "in"),
-    BOLETO(2, "Boleto", "out"),
-    FINANCIAMENTO(3, "Financiamento", "out"),
-    CREDITO(4, "Crédito", "in"),
-    RECEBIMENTO_EMPRESTIMO(5, "Recebimento Empréstimo", "in"),
-    VENDAS(6, "Vendas", "in"),
-    RECEBIMENTO_TED(7, "Recebimento TED", "in"),
-    RECEBIMENTO_DOC(8, "Recebimento DOC", "in"),
-    ALGUEL(9, "Aluguel", "out");
+    DEBITO(1, "Débito", "Entrada"),
+    BOLETO(2, "Boleto", "Saída"),
+    FINANCIAMENTO(3, "Financiamento", "Saída"),
+    CREDITO(4, "Crédito", "Entrada"),
+    RECEBIMENTO_EMPRESTIMO(5, "Recebimento Empréstimo", "Entrada"),
+    VENDAS(6, "Vendas", "Entrada"),
+    RECEBIMENTO_TED(7, "Recebimento TED", "Entrada"),
+    RECEBIMENTO_DOC(8, "Recebimento DOC", "Entrada"),
+    ALGUEL(9, "Aluguel", "Saída");
 
     private Integer codigo;
 
@@ -27,6 +27,10 @@ public enum TransacaoEnum {
                 .filter(t -> t.codigo.equals(codigo))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    public Boolean isEntrada(){
+        return this.natureza.equals("Entrada");
     }
 
     TransacaoEnum(Integer codigo, String nome, String natureza){
