@@ -4,45 +4,23 @@ import br.com.bycoders.desafiodev.entities.Loja;
 import br.com.bycoders.desafiodev.entities.Operacao;
 import br.com.bycoders.desafiodev.enums.TransacaoEnum;
 import br.com.bycoders.desafiodev.utils.MD5Util;
-import org.apache.tomcat.util.security.MD5Encoder;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class CnabMapper{
 
-    public static List<Operacao> mapper(InputStream inputStream) throws IOException {
-
-        List<Operacao> operacaos = new ArrayList<>();
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-//        while(reader.ready()) {
-//            operacaos.add(mapper(reader.readLine()));
-//        }
-
-        return operacaos;
-    }
-
     public static Operacao mapperOperacao(String operacao){
-        Operacao operacaoEntity = new Operacao();
-
-        operacaoEntity.setTipo(getTipoTransacao(operacao));
-        operacaoEntity.setData(getData(operacao));
-        operacaoEntity.setValor(getValor(operacao));
-        operacaoEntity.setCpfBeneficiario(getCpfBeneficiario(operacao));
-        operacaoEntity.setCartao(getCartao(operacao));
-        operacaoEntity.setHora(getHora(operacao));
-
-        return operacaoEntity;
+        return Operacao.builder()
+                .tipo(getTipoTransacao(operacao))
+                .data(getData(operacao))
+                .valor(getValor(operacao))
+                .cpfBeneficiario(getCpfBeneficiario(operacao))
+                .cartao(getCartao(operacao))
+                .hora(getHora(operacao))
+                .build();
     }
 
     public static Loja mapperLoja(String operacao) throws Exception {

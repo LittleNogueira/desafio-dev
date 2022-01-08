@@ -1,4 +1,4 @@
-package br.com.bycoders.desafiodev.dtos;
+package br.com.bycoders.desafiodev.responses;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class LojaResumo {
+public class LojaResumoResponse {
 
     private String id;
 
@@ -18,6 +18,6 @@ public class LojaResumo {
 
     private BigDecimal totalizador;
 
-    private List<OperacaoResumo> operacoes;
+    private List<OperacaoResumoResponse> operacoes;
 
 }

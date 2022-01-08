@@ -1,6 +1,6 @@
 package br.com.bycoders.desafiodev.controllers;
 
-import br.com.bycoders.desafiodev.dtos.LojaResumo;
+import br.com.bycoders.desafiodev.responses.LojaResumoResponse;
 import br.com.bycoders.desafiodev.mappers.ResumoMapper;
 import br.com.bycoders.desafiodev.services.LojaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +20,13 @@ public class LojaController {
     private LojaService lojaService;
 
     @GetMapping("/operacao")
-    public ResponseEntity<List<LojaResumo>> resumo(){
-        return ResponseEntity.ok(ResumoMapper.mapperListLoja(lojaService.getAll()));
+    public ResponseEntity<List<LojaResumoResponse>> resumoGeral(){
+        return ResponseEntity.ok(ResumoMapper.mapperListLoja(lojaService.buscarTodos()));
     }
 
     @GetMapping("{id}/operacao")
-    public ResponseEntity<LojaResumo> resumo(@PathVariable String id){
-        return ResponseEntity.ok(ResumoMapper.mapper(lojaService.getById(id)));
+    public ResponseEntity<LojaResumoResponse> resumoPorLoja(@PathVariable String id){
+        return ResponseEntity.ok(ResumoMapper.mapper(lojaService.buscarPorId(id)));
     }
 
 }

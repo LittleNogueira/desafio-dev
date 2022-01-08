@@ -1,7 +1,7 @@
 package br.com.bycoders.desafiodev.mappers;
 
-import br.com.bycoders.desafiodev.dtos.LojaResumo;
-import br.com.bycoders.desafiodev.dtos.OperacaoResumo;
+import br.com.bycoders.desafiodev.responses.LojaResumoResponse;
+import br.com.bycoders.desafiodev.responses.OperacaoResumoResponse;
 import br.com.bycoders.desafiodev.entities.Loja;
 import br.com.bycoders.desafiodev.entities.Operacao;
 
@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 
 public abstract class ResumoMapper {
 
-    public static List<LojaResumo> mapperListLoja(List<Loja> lojas){
+    public static List<LojaResumoResponse> mapperListLoja(List<Loja> lojas){
         return lojas.stream().map(ResumoMapper::mapper).collect(Collectors.toList());
     }
 
-    public static LojaResumo mapper(Loja loja){
-        return LojaResumo.builder()
+    public static LojaResumoResponse mapper(Loja loja){
+        return LojaResumoResponse.builder()
                 .id(loja.getId())
                 .nome(loja.getNome())
                 .dono(loja.getDono())
@@ -25,12 +25,12 @@ public abstract class ResumoMapper {
                 .build();
     }
 
-    public static List<OperacaoResumo> mapperListOperacoes(List<Operacao> operacaos){
+    public static List<OperacaoResumoResponse> mapperListOperacoes(List<Operacao> operacaos){
         return operacaos.stream().map(ResumoMapper::mapper).collect(Collectors.toList());
     }
 
-    public static OperacaoResumo mapper(Operacao operacao){
-        return OperacaoResumo.builder()
+    public static OperacaoResumoResponse mapper(Operacao operacao){
+        return OperacaoResumoResponse.builder()
                 .id(operacao.getId())
                 .tipo(operacao.getTipo())
                 .natureza(operacao.getTipo().getNatureza())

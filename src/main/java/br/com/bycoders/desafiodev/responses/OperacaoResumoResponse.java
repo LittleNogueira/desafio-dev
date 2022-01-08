@@ -1,4 +1,4 @@
-package br.com.bycoders.desafiodev.dtos;
+package br.com.bycoders.desafiodev.responses;
 
 import br.com.bycoders.desafiodev.enums.TransacaoEnum;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import java.time.LocalTime;
 
 @Data
 @Builder
-public class OperacaoResumo {
+public class OperacaoResumoResponse {
 
     private Long id;
 

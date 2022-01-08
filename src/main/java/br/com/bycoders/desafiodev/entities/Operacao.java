@@ -1,8 +1,7 @@
 package br.com.bycoders.desafiodev.entities;
 
 import br.com.bycoders.desafiodev.enums.TransacaoEnum;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,8 +11,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
 @Data
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Operacao {
 
     @Id

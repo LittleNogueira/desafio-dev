@@ -40,7 +40,7 @@ public class CnabService {
 
         }
 
-        return lojaService.save(hashMap);
+        return lojaService.salvar(hashMap);
     }
 
 }
