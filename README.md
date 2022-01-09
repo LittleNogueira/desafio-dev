@@ -23,7 +23,7 @@ Para subir todo o sistema usando o docker basta seguir os passos abaixo.
 
 Pronto, o aplicativo está pronto para uso em http://localhost:8080 🎉 🎊 🎈
 
-No projeto se encontra uma collections para importar no Insomnia, contém todos os endpoints e possiveis dados para mandar na requisição.
+No projeto se encontra uma <a href="https://github.com/LittleNogueira/desafio-dev/blob/master/insomnia.json" target="_blank" >collections</a> para importar no Insomnia, contém todos os endpoints e possiveis dados para mandar na requisição.
 
 ## Sobre as tecnologias
 
