@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-O teste consiste em parsear este arquivo de texto(CNAB) e salvar suas informações(transações financeiras) em uma base de dados.
+O teste consiste em parsear este arquivo de texto(CNAB) e salvar suas informações(transações financeiras) em uma base de dados, na solução do desafio eu utilizei o framework spring boot com java 11, o projeto contempla OAuth2, testes unitários e docker. 
 
 ## Intruções para configuração
 
@@ -46,3 +46,7 @@ O docker é uma alternativa de virtualização em que o kernel da máquina hospe
 #### Docker compose
 
 È uma ferramenta para definir e executar aplicativos Docker com vários contêineres. Ele usa arquivos YAML para configurar os serviços do aplicativo e executa o processo de criação e inicialização de todos os contêineres com um único comando. O utilitário CLI do docker-compose permite que os usuários executem comandos em vários contêineres ao mesmo tempo, por exemplo, criando imagens, dimensionando contêineres, executando contêineres que foram interrompidos e muito mais.
+
+#### JWT
+
+O JSON Web Token é um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia cujo payload contém o JSON que afirma algum número de declarações. Os tokens são assinados usando um segredo privado ou uma chave pública/privada.
