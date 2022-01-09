@@ -35,7 +35,7 @@ public class UsuarioServiceTests {
     }
 
     @Test
-    public void loadUserByUsernameWithSucess(){
+    public void loadUserByUsernameComSucesso(){
         when(usuarioRespository.findByEmail(any(String.class))).thenReturn(Optional.of(new Usuario()));
 
         UserDetails userDetails = usuarioService.loadUserByUsername("email");
@@ -45,7 +45,7 @@ public class UsuarioServiceTests {
     }
 
     @Test
-    public void loadUserByUsernameWithErro(){
+    public void loadUserByUsernameComExcecao(){
         when(usuarioRespository.findByEmail(any(String.class))).thenReturn(Optional.empty());
 
         UsernameNotFoundException thrown = assertThrows(UsernameNotFoundException.class, () -> {

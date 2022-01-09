@@ -14,7 +14,7 @@ public enum TransacaoEnum {
     VENDAS(6, "Vendas", "Entrada"),
     RECEBIMENTO_TED(7, "Recebimento TED", "Entrada"),
     RECEBIMENTO_DOC(8, "Recebimento DOC", "Entrada"),
-    ALGUEL(9, "Aluguel", "Saída");
+    ALUGUEL(9, "Aluguel", "Saída");
 
     private Integer codigo;
 
